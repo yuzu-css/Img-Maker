@@ -26,6 +26,15 @@
             font-style: normal;
         }
 
+        @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+        @font-face {
+            font-family: 'NotoSerifKR';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         :root {
             --primary: #6366f1;
             --border: #e2e8f0;
@@ -271,4 +280,10 @@
         }
         .option[data-font="DOSGothic"] {
         font-family: 'DOSGothic', sans-serif;
+        }
+        .option[data-font="notosanskr"] {
+        font-family: 'notosanskr', sans-serif;
+        }
+        .option[data-font="NotoSerifKR"] {
+        font-family: 'NotoSerifKR', sans-serif;
         }
