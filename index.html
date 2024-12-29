@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프사-만들어주는 유즈</title>
+    <link rel="icon" href="image/yuzu.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="preview-container">
+            <div id="preview"></div>
+        </div>
+
+        <div class="controls">
+            <div class="compact-controls">
+                <input type="text" id="text-input" placeholder="텍스트" style="width: 100px;">
+                <input type="number" id="font-size-input" min="12" max="120" value="36" style="width: 60px;">
+                <input type="color" id="text-color-picker" class="color-picker" value="#FFFFFF">
+                <div class="font-select">
+                    <div class="selected">폰트</div>
+                    <div class="options">
+                        <div class="option" data-font="Pretendard-Regular">프리텐다드</div>
+                        <div class="option" data-font="Cafe24Ssurround">카페24 써라운드</div>
+                        <div class="option" data-font="RIDIBatang">리디바탕</div>
+                        <div class="option" data-font="DOSGothic">도스고딕</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gradient-controls">
+                <input type="color" id="gradient-color-1" class="color-picker" value="#FF6B6B">
+                <input type="color" id="gradient-color-2" class="color-picker" value="#845EF7">
+            </div>
+
+            <div class="gradient-presets">
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FF6B6B, #845EF7)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #4158D0, #C850C0)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #0093E9, #80D0C7)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #8EC5FC, #E0C3FC)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #D9AFD9, #97D9E1)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #00DBDE, #FC00FF)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #85FFBD, #FFFB7D)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FF9A8B, #FF6A88)"></button>
+            </div>
+
+            <div class="shape-options">
+                <button class="shape-btn selected" data-shape="circle">⚪</button>
+                <button class="shape-btn" data-shape="square">⬜</button>
+            </div>
+
+            <button class="download-btn">저장하기</button>
+        </div>
+    </div>
+
+    <div class="fixed-image">
+        <img src="image/yuzu.png" alt="고정 이미지">
+        </div>
+    </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+     <script src="script.js"></script>
+</body>
+</html>
