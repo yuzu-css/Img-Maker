@@ -1,5 +1,6 @@
 const preview = document.getElementById('preview');
 const textInput = document.getElementById('text-input');
+const fontSizeSlider = document.getElementById('font-size-slider');
 const fontSizeInput = document.getElementById('font-size-input');
 const textColorPicker = document.getElementById('text-color-picker');
 const fontSelect = document.querySelector('.font-select');
@@ -10,6 +11,8 @@ const downloadBtn = document.querySelector('.download-btn');
 const gradientPresets = document.querySelectorAll('.gradient-preset');
 const gradientColor1 = document.getElementById('gradient-color-1');
 const gradientColor2 = document.getElementById('gradient-color-2');
+const inputField = document.getElementById('input-field');
+
 
 // Font selector
 document.addEventListener('click', (e) => {
@@ -31,20 +34,64 @@ fontOptions.forEach(option => {
     });
 });
 
+
+inputField.addEventListener('input', () => {
+    const value = inputField.value.trim();
+    if (value.startsWith('http') && value.endsWith('.svg')) {
+        fetch(value)
+            .then(response => response.text())
+            .then(svgContent => {
+                preview.innerHTML = svgContent;
+                const svg = preview.querySelector('svg');
+                if (svg) {
+                    svg.style.width = `${fontSizeInput.value}px`;
+                    svg.style.height = `${fontSizeInput.value}px`;
+                    svg.style.color = textColorPicker.value;
+                }
+            })
+            .catch(error => {
+                console.error('Failed to load SVG:', error);
+                preview.innerHTML = 'SVG 로드 실패';
+            });
+    } else {
+        preview.innerHTML = value;
+        preview.style.fontSize = `${fontSizeInput.value}px`;
+        preview.style.color = textColorPicker.value;
+    }
+});
+
+
+
 document.addEventListener('click', (e) => {
     if (!fontSelect.contains(e.target)) {
         fontSelect.classList.remove('active');
     }
 });
 
-// Text input
-textInput.addEventListener('input', () => {
-    preview.textContent = textInput.value;
-});
 
 // Font size input
-fontSizeInput.addEventListener('input', () => {
-    preview.style.fontSize = `${fontSizeInput.value}px`;
+fontSizeSlider.addEventListener('input', (e) => {
+    const value = e.target.value;
+    fontSizeInput.value = value;
+    preview.style.fontSize = `${value}px`;
+
+    const svg = preview.querySelector('svg');
+    if (svg) {
+        svg.style.width = `${value}px`;
+        svg.style.height = `${value}px`;
+    }
+});
+
+fontSizeInput.addEventListener('input', (e) => {
+    const value = e.target.value;
+    fontSizeSlider.value = value;
+    preview.style.fontSize = `${value}px`;
+
+    const svg = preview.querySelector('svg');
+    if (svg) {
+        svg.style.width = `${value}px`;
+        svg.style.height = `${value}px`;
+    }
 });
 
 // Text color picker
