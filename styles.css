@@ -35,6 +35,20 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'kdg_Medium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/kdg_Medium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         :root {
             --primary: #6366f1;
             --border: #e2e8f0;
@@ -59,12 +73,13 @@
         }
 
         .container {
-            max-width: 400px;
+            max-width: 800px;
             width: 100%;
             background: white;
             padding: 20px;
             border-radius: 16px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px; /* 아래 간격 추가 */
         }
 
         .preview-container {
@@ -91,11 +106,30 @@
             word-wrap: break-word;
             text-align: center;
             padding: 10px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #preview.square {
             border-radius: 0;
         }
+
+        .input-field {
+            flex: 3;
+            min-height: 10px; /* 기본 높이를 18px로 설정 */
+            resize: vertical;
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Pretendard-Regular', sans-serif;
+        }
+        
+
 
         .controls {
             display: flex;
@@ -107,11 +141,10 @@
             display: flex;
             gap: 8px;
             align-items: center;
+            margin-bottom: 10px;
+            flex-direction: row;
         }
 
-        .input-group {
-            flex: 1;
-        }
 
         input[type="text"],
         input[type="number"] {
@@ -123,11 +156,8 @@
         }
 
         .color-picker {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 32px;
-            height: 32px;
+            width: 40px; /* 수정: 32px에서 40px로 변경 */
+            height: 40px; /* 수정: 32px에서 40px로 변경 */
             padding: 0;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -151,11 +181,56 @@
         }
 
 
+        .font-size-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        #font-size-slider {
+            flex: 1;
+            -webkit-appearance: none; /* 기본 브라우저 스타일 제거 */
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            outline: none;
+            transition: background 0.3s;
+        }
+        
+        #font-size-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        #font-size-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        #font-size-input {
+            width: 60px;
+            text-align: center;
+            padding: 4px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        
         .font-select {
             position: relative;
-            width: 150px;
+            width: 200px; /* 수정: 150px에서 200px로 변경 */
         }
-
+        
         .font-select .selected {
             padding: 8px;
             border: 1px solid #e2e8f0;
@@ -208,9 +283,9 @@
 
         .gradient-presets {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin: 8px 0;
+            grid-template-columns: repeat(8, 1fr); /* 4열에서 8열로 변경 */
+            gap: 10px;
+            margin: 12px 0;
         }
 
         .gradient-preset {
@@ -234,6 +309,7 @@
             cursor: pointer;
             background: white;
             font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .download-btn {
@@ -286,4 +362,12 @@
         }
         .option[data-font="NotoSerifKR"] {
         font-family: 'NotoSerifKR', sans-serif;
+        }
+
+        .option[data-font="SBAggroB"] {
+        font-family: 'SBAggroB', sans-serif;
+        }
+
+        .option[data-font="kdg_Medium"] {
+        font-family: 'kdg_Medium', sans-serif;
         }
