@@ -12,24 +12,28 @@
         <div class="preview-container">
             <div id="preview"></div>
         </div>
-
-        <div class="controls">
-            <div class="compact-controls">
-                <input type="text" id="text-input" placeholder="텍스트" style="width: 100px;">
-                <input type="number" id="font-size-input" min="12" max="120" value="36" style="width: 60px;">
-                <input type="color" id="text-color-picker" class="color-picker" value="#FFFFFF">
-                <div class="font-select">
-                    <div class="selected">폰트</div>
-                    <div class="options">
-                        <div class="option" data-font="Pretendard-Regular">프리텐다드</div>
-                        <div class="option" data-font="Cafe24Ssurround">카페24 써라운드</div>
-                        <div class="option" data-font="RIDIBatang">리디바탕</div>
-                        <div class="option" data-font="DOSGothic">도스고딕</div>
-                        <div class="option" data-font="notosanskr">본고딕(Noto Sans)</div>
-                        <div class="option" data-font="NotoSerifKR">본명조(Source Han Serif)</div>
-                    </div>
+        <div class="controls compact-controls">
+            <textarea id="input-field" placeholder="텍스트 또는 SVG를 입력하세요" class="input-field"></textarea>
+            <div class="font-size-control">
+                <input type="range" id="font-size-slider" min="12" max="120" value="36">
+                <input type="number" id="font-size-input" min="12" max="120" value="36">
+            </div>
+            <input type="color" id="text-color-picker" class="color-picker" value="#FFFFFF">
+            <div class="font-select">
+                <div class="selected">폰트</div>
+                <div class="options">
+                    <div class="option" data-font="Pretendard-Regular">프리텐다드</div>
+                    <div class="option" data-font="Cafe24Ssurround">카페24 써라운드</div>
+                    <div class="option" data-font="RIDIBatang">리디바탕</div>
+                    <div class="option" data-font="DOSGothic">도스고딕</div>
+                    <div class="option" data-font="notosanskr">본고딕(Noto Sans)</div>
+                    <div class="option" data-font="NotoSerifKR">본명조(Source Han Serif)</div>
+                    <div class="option" data-font="SBAggroB">어그로체</div>
+                    <div class="option" data-font="kdg_Medium">솔뫼 김대건체</div>
                 </div>
             </div>
+        </div>
+        
 
             <div class="gradient-controls">
                 <input type="color" id="gradient-color-1" class="color-picker" value="#FF6B6B">
@@ -45,6 +49,14 @@
                 <button class="gradient-preset" style="background: linear-gradient(45deg, #00DBDE, #FC00FF)"></button>
                 <button class="gradient-preset" style="background: linear-gradient(45deg, #85FFBD, #FFFB7D)"></button>
                 <button class="gradient-preset" style="background: linear-gradient(45deg, #FF9A8B, #FF6A88)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FF3CAC, #784BA0)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FA8BFF, #2BD2FF)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FAD961, #F76B1C)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #08AEEA, #2AF598)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FEE140, #FA709A)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #3EECAC, #EE74E1)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #4158D0, #FFCC70)"></button>
+                <button class="gradient-preset" style="background: linear-gradient(45deg, #FF0844, #FFB199)"></button>
             </div>
 
             <div class="shape-options">
